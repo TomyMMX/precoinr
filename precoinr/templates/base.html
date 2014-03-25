@@ -1,0 +1,90 @@
+{% load account_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PRECoinr - {% block title %}{% endblock %}</title>
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" media="screen" href="{% static "css/bootstrap.css" %}" />
+    <link rel="stylesheet" media="screen" href="{% static "css/bootstrap-responsive.css" %}" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/toastr.css" %}" />
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="in-nav">
+    <div class="container">
+        <div class="span11">
+            <ul class="pull-right">
+                <li class="spot-price">
+                    <span class="fiat-currency muted">BALANCE: </span>
+                    {{ balance|cryptoCurrency }} <span class="coin-currency">mɃ</span>
+                    <a href="/logout">
+                        <i class="icon-reply"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="in-sub-nav">
+    <div class="container">
+            <div class="span2" style="margin-top: 15px; margin-left: 50px">
+                <a id="logo" href="/">
+                    <h4>
+                        pre<strong>coinr</strong>
+                    </h4>
+                </a>
+            </div>
+            <div class="span8 pull-right">
+                <ul class="pull-right">
+                    <li>
+                        <a href="/account" class="home {% block home %}{% endblock %}">
+                            <i class="icon-home icon-2x"></i>
+                            <br /><strong>Account</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/account/history" class="market {% block history %}{% endblock %}">
+                            <i class="icon-bar-chart icon-2x" > </i>
+                            <br /><strong>History</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/account/withdraw" class="balance {% block withdraw %}{% endblock %}">
+                            <i class="icon-money icon-2x" > </i>
+                            <br /><strong>Withdraw</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
+
+<div class="page">
+    <div class="page-container">
+        <div class="container">
+            <div class="" style="min-height:350px;" id="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="span11 pull-right">
+            <span class="pull-right">BTC: 1H3xk4HMW9fVWMsXmT2hDbW3whEedUP4iJ</span>
+        </div>
+    </div>
+</footer>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{% static "js/bootstrap.min.js"%}"></script>
+</body>
+</html>

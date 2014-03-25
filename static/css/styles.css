@@ -1,0 +1,389 @@
+body {
+  background-color: #f6f6f6;
+  font-family: Lato; }
+  body p {
+    font-size: 0.9em; }
+  body p.sub {
+    color: #999; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    text-transform: uppercase;
+    font-weight: 300; }
+
+#logo {
+  color: #333; }
+
+.page {
+  margin: auto;
+  background-color: #FFF;
+  border-radius: 6px;
+  margin-top: -85px;
+  padding: 20px 0px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+  .page .header {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EEE; }
+
+@media (min-width: 1200px) {
+  .page {
+    width: 1100px; } }
+@media (min-width: 768px) and (max-width: 979px) {
+  .page {
+    width: 764px; } }
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0; }
+
+  .page {
+    width: 100%; }
+
+  .page-container {
+    padding: 0px 20px; }
+
+  #in-nav ul.pull-right {
+    top: 0px !important; }
+
+  .message-sidebar {
+    margin-right: -20px !important; } }
+#in-nav {
+  background-color: rgb(245, 245, 245);
+  background-repeat: repeat;
+  height: 30px;
+  padding-top: 3px; }
+  #in-nav ul {
+    position: relative;
+    top: 3px; }
+    #in-nav ul li {
+      list-style-type: none;
+      display: inline; }
+      #in-nav ul li a {
+        padding: 3px; }
+
+#in-sub-nav {
+  background-color: rgb(240, 173, 58);
+  -moz-box-shadow: inset 0px 0px 3px rgb(171, 108, 0);
+  -webkit-box-shadow: inset 0px 0px 3px rgb(171, 108, 0);
+  box-shadow: inset 0px 0px 3px rgb(171, 108, 0);}
+  #in-sub-nav ul {
+    text-align: center;
+    margin-bottom: 65px;
+    margin-right: 80px;
+    width: 335px;}
+  #in-sub-nav li {
+    list-style-type: none;
+    display: inline-block; }
+    #in-sub-nav li a {
+      display: block;
+      border-radius: 6px;
+      padding: 15px 10px 5px;
+      min-height: 56px;
+      min-width: 64px;
+      margin: 5px 10px 10px;
+      color: #FFF;
+      font-weight: 100; }
+    #in-sub-nav li a:hover{
+        background-color: rgb(171, 108, 0);
+        text-decoration: none; }
+    #in-sub-nav li a.active {
+      background-color: #149bdf;
+      text-decoration: none; }
+    #in-sub-nav li span.label.pull-right {
+      position: relative;
+      top: 24px;
+      right: 14px; }
+
+.content-span{
+    margin-top:-41px;
+    margin-right: 15px;
+}
+
+/*=====small device corrections====*/
+@media (max-width: 764px) {
+    #in-sub-nav ul {
+        margin-right: 0px;
+    }
+
+    .content-span{
+        margin-top:0px;
+    }
+}
+
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #999; }
+  footer a {
+    color: #999; }
+
+.divide {
+  border-top: 1px solid #EEE;
+  margin-top: 40px;
+  padding-top: 40px; }
+
+.small-divide {
+  border-top: 1px solid #EEE;
+  margin-top: 20px;
+  padding-top: 20px; }
+
+.batch {
+  background-image: url(white-batch-32.png);
+  display: inline-block;
+  height: 32px;
+  width: 32px; }
+
+.home {
+  background-position: -128px -96px; }
+
+.star {
+  background-position: -192px -96px; }
+
+.forms {
+  background-position: -96px -32px; }
+
+.stream {
+  background-position: 0 -64px; }
+
+.tables {
+  background-position: -32px -32px; }
+
+.settings {
+  background-position: -288px -128px; }
+
+.quill {
+  background-position: -288px 0px; }
+
+.users {
+  background-position: 0 -96px; }
+
+.plane {
+  background-position: -256px -96px; }
+
+.calendar {
+  background-position: -160px -128px; }
+
+.batch-big {
+  background-image: url(../img/white-batch-64.png);
+  display: inline-block;
+  height: 64px;
+  width: 64px; }
+
+.b-wifi {
+  background-position: -256px -64px; }
+
+.b-code {
+  background-position: -64px 0px; }
+
+.b-comment {
+  background-position: -192px -256px; }
+
+.b-flag {
+  background-position: -384px -256px; }
+
+.b-database {
+  background-position: -256px 0px; }
+
+.b-alarm {
+  background-position: -384px 0px; }
+
+/* ============== messages ============== */
+.message-sidebar {
+  border-right: 1px solid #EEE;
+  margin: -20px;
+  margin-right: 0; }
+  .message-sidebar a.message-preview {
+    display: block;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #EEE;
+    padding: 10px 20px; }
+    .message-sidebar a.message-preview h4 {
+      font-weight: 400;
+      text-transform: none; }
+    .message-sidebar a.message-preview p, .message-sidebar a.message-preview h5 {
+      color: #999; }
+  .message-sidebar a.new {
+    background-color: #FFF; }
+  .message-sidebar a.active {
+    background-color: #008DCD;
+    color: #FFF; }
+    .message-sidebar a.active p, .message-sidebar a.active h5 {
+      color: rgba(255, 255, 255, 0.8); }
+  .message-sidebar a:hover {
+    text-decoration: none;
+    cursor: pointer; }
+  .message-sidebar .load-more {
+    text-align: center; }
+    .message-sidebar .load-more a {
+      padding: 20px;
+      display: block; }
+
+@media (min-width: 768px) {
+  .message-sidebar {
+    overflow: auto;
+    height: 700px; } }
+.messages h4 {
+  text-transform: none;
+  font-weight: 400; }
+.messages .message {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 20px; }
+  .messages .message h5 {
+    font-weight: 300; }
+.messages .message-body {
+  padding-left: 80px; }
+  .messages .message-body textarea {
+    height: 80px;
+    margin-right: 20px;
+    width: 96%; }
+
+/* ============== login ============== */
+.login {
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 80px; }
+
+/* ============== sidebar ============== */
+.sidebar {
+  border-top: 1px solid #EEE; }
+  .sidebar ul {
+    padding: 0;
+    margin: 0; }
+    .sidebar ul li {
+      list-style-type: none; }
+      .sidebar ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #EEE;
+        text-transform: uppercase; }
+      .sidebar ul li a:hover {
+        background-color: #EEE;
+        /*        color: #FFF;*/
+        text-decoration: none; }
+      .sidebar ul li ul {
+        background-color: #F6F6F6;
+        box-shadow: inset 0 1px 10px #E0E0E0; }
+
+
+
+/* ============== table-panel ============== */
+.table-panel i {
+  margin: 4px; }
+.table-panel table {
+  border-top: 1px solid #EEE; }
+
+/* ============== panels ============== */
+.panel {
+  width: 150px;
+  background-color: #EEE;
+  border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 20px; }
+  .panel .top {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #555555;
+    padding-top: 20px; }
+    .panel .top i {
+      display: block;
+      margin: 0px auto 20px; }
+    .panel .top h6 {
+      display: inline;
+      background-color: #555555;
+      position: relative;
+      top: 5px;
+      padding: 6px 12px;
+      border-radius: 30px;
+      color: #FFF;
+      font-weight: 600;
+      font-size: 0.7em; }
+  .panel .bottom {
+    padding-top: 20px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    text-align: center;
+    border-top: none; }
+    .panel .bottom h2 {
+      font-weight: 600;
+      margin: 0; }
+    .panel .bottom h6 {
+      font-size: 0.7em;
+      font-weight: 600;
+      position: relative;
+      bottom: 10px;
+      color: #555555; }
+  .panel .warning, .panel .warning h6 {
+    background-color: #ffa93c;
+    /*    box-shadow: inset 0 0 10px lighten($warning, 8%);
+        border: 1px solid darken($warning, 20%)*/ }
+  .panel .success, .panel .success h6 {
+    background-color: #4cb158;
+    /*    box-shadow: inset 0 0 10px lighten($success, 8%);
+        border: 1px solid darken($success, 20%)*/ }
+  .panel .danger, .panel .danger h6 {
+    background-color: #ea494a;
+    /*    box-shadow: inset 0 0 10px lighten($danger, 8%);
+        border: 1px solid darken($danger, 20%)*/ }
+  .panel .info, .panel .info h6 {
+    background-color: #14b8d4;
+    /*    box-shadow: inset 0 0 10px lighten($info, 8%);
+        border: 1px solid darken($info, 20%)*/ }
+  .panel .primary, .panel .primary h6 {
+    background-color: #007ccd;
+    /*    box-shadow: inset 0 0 10px lighten($primary, 8%);
+        border: 1px solid darken($primary, 20%)*/ }
+  .panel .purple, .panel .purple h6 {
+    background-color: #7932ea;
+    /*    box-shadow: inset 0 0 10px lighten($purple, 8%);
+        border: 1px solid darken($purple, 20%)*/ }
+
+/* ============== tables ============== */
+.tables code {
+  display: inline-block;
+  margin: 2px; }
+
+/* ============== faq ============== */
+.qa {
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+  .qa h4 {
+    text-transform: none;
+    font-weight: 400; }
+
+
+/*=========stuff==========*/
+
+.balance td {
+    line-height:30px;
+    padding: 10px 5px;
+}
+.balance h5{
+    margin:0px;
+    line-height: 30px;
+}
+.balance input{
+    margin-bottom: 5px;
+}
+.balance span.hover {
+    cursor:pointer;
+}
+
+.btcaddress{
+    font-size: 0.8em;
+}
+
+i:hover{
+    text-decoration: none;
+}
+.line {
+    fill: none;
+    stroke: #ffa93c;
+    stroke-width: 3px;
+
+}
+

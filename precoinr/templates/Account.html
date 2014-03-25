@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Account overview{% endblock %}
+{% block home %}active{% endblock %}
+{% load qr_tags %}
+{% load humanize %}
+{% load account_extras %}
+{% block content %}
+
+    <div class="span4 content-span">
+        <h4 class="header">Active transactions</h4>
+        <table class="table table-striped">
+            <thead>
+            <th class="" style="border-top:0;">Type</th>
+            <th class="" style="border-top:0;">Time</th>
+            <th class="" style="border-top:0;">Amount<span class="muted coin-currency" style="margin-left:5px;"></span></th>
+            </thead>
+            <tbody>
+            {% for tx in activeTransactions.transactions %}
+                <tr class="coin">
+                    <td>
+                        <span class="fiat"><h5 style="float:left">{{ tx.type }}</h5></span>
+                    </td>
+                    <td>
+                        <span class="fiat">{{ tx.timestamp|naturalday }}</span>
+                    </td>
+                    <td>
+                        <span class="fiat">{{ tx.coins|cryptoCurrency }}{{ tx.coinsSign }}</span>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="pull-right content-span">
+    <div class="span3">
+        <h4 class="header">Balance</h4>
+        <table id="" class="table table-striped balance">
+            <thead>
+            <th class="" style="border-top:0;">Coin</th>
+            <th class="" style="border-top:0;">Coins<span class="muted coin-currency" style="margin-left:5px;"></span></th>
+            <th class="" style="border-top:0;">Value<span class="muted fiat-currency" style="margin-left:5px;">EUR</span></th>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="1"><h4>Total</h4></td>
+                <td> <h4 id="total_coin"></h4></td>
+                <td> <h4 id="total_fiat">{{ sum|currency }}€</h4></td>
+            </tr>
+            </tfoot>
+            <tbody>
+            {% for f in funds %}
+                <tr class="coin">
+                    <td class="name">
+                        <span style="float:left">{{ f.coinprefix }}</span><h5 style="float:left">{{ f.currencyCode }}</h5>
+                            <span style="margin-right:5px" class="pull-right">
+                            </span>
+                    </td>
+                    <td class="coin_value">
+                        <span class="value">{{ f.fundsString }}</span>
+                    </td>
+                    <td>
+                        <span class="fiat">{{ f.FiatValue|currency }}€</span>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="span3">
+        <h4 class="header">BTC Deposit</h4>
+        <div style="text-align: center; margin-top: -10px">
+            <span class="btcaddress">{{ depositData.BTC.Address }}</span>
+            {% qr_from_text depositData.BTC.QrString %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

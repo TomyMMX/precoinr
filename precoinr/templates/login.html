@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="span8 offset4">
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span>
+            <input class="span2" type="text" placeholder="username" name="username">
+        </div>
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-key"></i></span>
+            <input class="span2" name="password" type="password" placeholder="Password">
+        </div>
+        <input type="submit" value="Log In" />
+    </form>
+    </div>
+{% endblock %}

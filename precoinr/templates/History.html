@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Transaction history{% endblock %}
+{% block history %}active{% endblock %}
+{% load humanize %}
+{% load account_extras %}
+{% block content %}
+    <div class="span11 content-span">
+        <h4 class="header">Transaction history</h4>
+        <table class="table table-striped, balance">
+            <thead>
+            <th class="" style="border-top:0;">Type</th>
+            <th class="" style="border-top:0;">Date and Time<span class="muted" style="margin-left:5px;"></span></th>
+            <th class="" style="border-top:0;">Value<span class="muted" style="margin-left:5px;"></span></th>
+            <th class="" style="border-top:0;">Amount<span class="muted" style="margin-left:5px;">mBTC</span></th>
+            <th class="" style="border-top:0;">Exchange<span class="muted" style="margin-left:5px;">Rate</span></th>
+            <th class="" style="border-top:0;">Amount<span class="muted" style="margin-left:5px;">EUR</span></th>
+            <th class="" style="border-top:0;">Precoinr<span class="muted" style="margin-left:5px;">FEE</span></th>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="3"><h4>Total</h4></td>
+                <td colspan="2">
+                    {% if total.BTC != 0 %}
+                    <h4 id="total_btc">{{ total.BTC|cryptoCurrency }}<span style="text-transform: lowercase;">m</span>Ƀ</h4>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if total.EUR != 0 %}
+                    <h4 id="total_eur">{{ total.EUR|currency }}€</h4>
+                    {% endif %}
+                </td>
+                <td> <h4></h4></td>
+            </tr>
+            </tfoot>
+            <tbody>
+            {% for tx in transactions %}
+                <tr class="coin" id="">
+                    <td class="name">
+                        <h5 style="float:left">{{ tx.type }}</h5>
+                        <span style="margin-right:5px" class="pull-right"></span>
+                    </td>
+                    <td class="date">
+                        <span class="value">{{ tx.timestamp }}</span>
+                    </td>
+                    <td class="fiat">
+                        <span class="value">{{ tx.value|currency}}{{ tx.valueSign }}</span>
+                    </td>
+                    <td class="fiat">
+                        <span class="value">{{ tx.coins|cryptoCurrency }}</span>
+                    </td>
+                    <td class="fiat">
+                        <span class="value">{{ tx.exRate|currency }}</span>
+                    </td>
+                    <td>
+                        <span class="fiat">{{ tx.amount|currency }}{{ tx.amountSign }}</span>
+                    </td>
+                    <td>
+                        {% if tx.precoinrfee != 0 %}
+                        <span class="fiat">{{ tx.precoinrfee|cryptoCurrency}}</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
